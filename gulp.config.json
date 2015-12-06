@@ -1,0 +1,57 @@
+{
+  "dest": {
+    "css": "./www/css",
+    "js": "./www/js",
+    "www": "./www"
+  },
+
+  "src": {
+
+    "config": {
+      "bower": "./bower.json",
+      "npm": "./package.json"
+    },
+
+    "vendor": {
+      "js": [
+        "./www/lib/ionic/js/ionic.bundle.min.js",
+        "./www/lib/moment/min/moment.min.js",
+        "./www/cordova.js"
+      ],
+      "css": [
+        "./www/lib/ionic/css/ionic.min.css"
+      ],
+      "scss": [
+        "./scss/ionic.app.scss"
+      ]
+    },
+
+    "custom": {
+      "index": "./www/index.html",
+      "templates": [
+        "./www/js/**/*template*.html"
+      ],
+      "js": [
+        "./www/js/**/*.module.js",
+        "./www/js/**/*.js"
+      ],
+      "css": [
+        "./www/css/ionic.app.min.css",
+        "./www/css/style.css"
+      ],
+      "scss": [
+        "./scss/**/*.scss",
+        "!./scss/ionic.app.scss"
+      ],
+      "specs": [
+        "./www/js/*.spec.js"
+      ],
+      "fonts": [
+        "./www/lib/font-awesome/fonts/**/*.*"
+      ],
+      "images": [
+        "./www/img/**/*"
+      ]
+    }
+  }
+}
