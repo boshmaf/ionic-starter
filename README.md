@@ -14,6 +14,7 @@ Here's what I typed to get it running on my 2012 MacBook Air.
 ⋊> ~ cd ionic-starter
 ⋊> ~/ionic-starter on master ◦ 
 ⋊> ~/ionic-starter on master ◦ # oh yeah, we're in business
+⋊> ~/ionic-starter on master ◦ # the fancy git theme is by an awesome shell called fish
 ⋊> ~/ionic-starter on master ◦
 ⋊> ~/ionic-starter on master ◦ # install node using brew, otherwise go to their website
 ⋊> ~/ionic-starter on master ◦ # this will also include node package manager called npm
