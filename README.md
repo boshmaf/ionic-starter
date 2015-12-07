@@ -61,18 +61,18 @@ You'll find that my author has defined a number of basic tasks. Some of them run
 You'll find some of the configurations that I use to generate automatically-configured platform projects under `platforms/`. Notice that by default I whitelist all network activity. You might want to change that. Also, there are some basic Crosswalk configuration, which you might wanna consider in the future.
 
 ### `bower.json`
-You'll find my Bower hommies. Right now it's pretty minimal. I use Ionic and MomentJS and I install them under `www/lib`. That's my vendor directory. It is specific in my resource file `.bowerrc`. Yep, that's that.
+You'll find my Bower hommies. Right now it's pretty minimal. I use Ionic and MomentJS and I install them under `www/lib/`. That's my vendor directory. It is specific in my resource file `.bowerrc`. Yep, that's that.
 
 ### Custom styles
-I use Sass and you can override Ionic's Sass or add your own under `scss` directory.
+I use Sass and you can override Ionic's Sass or add your own under `scss/` directory.
 
 ### App logic
 I'm an Ionic app, which means I use AngularJS. My frontend home directory is `www/`.
 
 ### Structure?
-You might notice that the styling and app logic directories are divided by features or components. There is always a `core` component that the app depends on, sometimes a number of independent `blocks` that are available to anyone, and finally components for application features.
+You might notice that the styling and app logic directories are divided by features or components. There is always a `core/` component that the app depends on, sometimes a number of independent `blocks/` that are available to anyone, and finally components for application features.
 
-*I generally like directories structured by feature or module, and my files by their features' or modules' functions.* For example, under `www/js/`, you'll find a directory called `login`, and under it you'll find some files implementing defintions for the feature's module, config, run, provider, factory, service, etc.
+*I generally like directories structured by feature or module, and my files by their features' or modules' functions.* For example, under `www/js/`, you'll find a directory called `login/`, and under it you'll find some files implementing defintions for the feature's module, config, run, provider, factory, service, etc.
 
 
 
