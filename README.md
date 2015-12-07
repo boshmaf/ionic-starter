@@ -2,7 +2,7 @@
 Hi! This is "mobile," a toy Ionic app. The following instructions will show you how to play with me.
 
 ## Installation
-Here's what I typed to get it running on my 2012 MacBook Air.
+Here's what my author typed to get me running on his 2012 MacBook Air. Old but freaking sleek!
 
 ```
 ⋊> ~ # from your home dir we start
