@@ -42,7 +42,7 @@ Here's what my author typed to get me running on his 2012 MacBook Air. Old but f
 
 ## Structure
 
-Ok. Maybe you have noticed I'm a little different. Let's take from the bottom of the file list. In:
+Ok. Maybe you have noticed I'm a little different. Let's dig in:
 
 ### Custom styles
 I use Sass and you can override Ionic's Sass or add your own under `scss/` directory.
