@@ -40,25 +40,37 @@ Here's what my author typed to get me running on his 2012 MacBook Air. Old but f
 ⋊> ~/ionic-starter on master ◦ ionic emulate android
 ```
 
-## About my structure
+## Structure
 
-Ok. Maybe you have noticed I'm a little different. Let's take from the bottom of the file list.
+Ok. Maybe you have noticed I'm a little different. Let's take from the bottom of the file list. In:
 
-In `package.json`, you'll find I have npm pre and post install scripts. These are bash scripts to (pre) install Ruby gems and (post) install Bower dependencies so you don't have to manually do it.
+### `package.json`
+You'll find I have npm pre and post install scripts. These are bash scripts to (pre) install Ruby gems and (post) install Bower dependencies so you don't have to manually do it.
 
 I also come shipped with basic and useful Cordova plugins. For example, `cordova-plugin-x-toast` allows me to show non-intrusive popups called toasts. These are useful to show log messages on a debug build or release. Unless you want to remote debug me, then the console shows the same toast messages but with more information like the cause of an error. When you recover my Ionic state, I add iOS and Android platforms under `platforms/`, and also install their plugins locally under `plugins/` which I also copy to each platform.
 
 You might have also noticed those Gulp packages. I'll talk about them in a minute.
 
-In `ionic.project`, you'll find some of my Ionic configuration. As you can see, I run Crosswalk as a webview for Android. Yeah, I'm that badass! You can do interesting stuff with Ionic CLI, which uses this file too.
+### `ionic.project`
+You'll find some of my Ionic configuration. As you can see, I run Crosswalk as a webview for Android. Yeah, I'm that badass! You can do interesting stuff with Ionic CLI, which uses this file too.
 
-In `gulpfile.js`, my author has defined a number of basic tasks. Some of them run by default by typing `gulp` in your shell. Others demand that you spill them out, like `gulp install`. Do go through the jsdocs of these tasks, I'll go more into details later on, but keep in mind that `gulp.config.json` is my Gulp config file. I read it to perform some of those tasks you saw.
+### `gulpfile.js`
+You'll find that my author has defined a number of basic tasks. Some of them run by default by typing `gulp` in your shell. Others demand that you spill them out, like `gulp install`. Do go through the jsdocs of these tasks, I'll go more into details later on, but keep in mind that `gulp.config.json` is my Gulp config file. I read it to perform some of those tasks you saw.
 
-Moving on. In `config.xml`, you'll find some of the configurations that I use to generate automatically-configured platform projects under `platforms/`. Notice that by default I whitelist all network activity. You might want to change that. Also, there are some basic Crosswalk configuration, which you might wanna consider in the future.
+### `config.xml`
+You'll find some of the configurations that I use to generate automatically-configured platform projects under `platforms/`. Notice that by default I whitelist all network activity. You might want to change that. Also, there are some basic Crosswalk configuration, which you might wanna consider in the future.
 
-In `bower.json`, you'll find my Bower hommies. Right now it's pretty minimal. I use Ionic and MomentJS and I install them under `www/lib`. That's my vendor directory. It is specific in my resource file `.bowerrc`. Yep, that's that.
+### `bower.json`
+You'll find my Bower hommies. Right now it's pretty minimal. I use Ionic and MomentJS and I install them under `www/lib`. That's my vendor directory. It is specific in my resource file `.bowerrc`. Yep, that's that.
 
-For styles, I use Sass and you can override Ionic's Sass or add your own under `scss` directory. You might notice that the directory structure is divided by features or components. There is always a `core` component, sometimes a number of independent `blocks`, or ones for application features. For example, `login` is a feature, and it has its own directory. This structure is also followed for my JS files under `www/js/`. My author has been inspired by Papa's Angular Style Guide.
+### Custom styles
+I use Sass and you can override Ionic's Sass or add your own under `scss` directory.
+
+### App logic
+I'm an Ionic app, which means I use AngularJS. My frontend home directory is `www/`.
+
+### Structure?
+You might notice that the styling and app logic directories are divided by features or components. There is always a `core` component that the app depends on, sometimes a number of independent `blocks` that are available to anyone, and finally components for application features.
 
 *I generally like directories structured by feature or module, and my files by their features' or modules' functions.* For example, under `www/js/`, you'll find a directory called `login`, and under it you'll find some files implementing defintions for the feature's module, config, run, provider, factory, service, etc.
 
