@@ -72,7 +72,7 @@ I'm an Ionic app, which means I use AngularJS. My frontend home directory is `ww
 ### Structure?
 You might notice that the styling and app logic directories are divided by features or components. There is always a `core/` component that the app depends on, sometimes a number of independent `blocks/` that are available to anyone, and finally components for application features.
 
-> I generally like directories structured by feature or module, and my files by their features' or modules' functions.
+> I generally like directories structured by module, and my files for these modules by their functions.
 
 For example, under `www/js/`, you'll find a directory called `login/`, and under it you'll find some files implementing defintions for the feature's module, config, run, provider, factory, service, etc.
 
