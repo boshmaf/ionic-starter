@@ -77,7 +77,7 @@ You'll find that my author has defined a number of basic tasks. Some of them run
 You'll find some of the configurations that I use to generate automatically-configured platform projects under `platforms/`. Notice that by default I whitelist all network activity. You might want to change that. Also, there are some basic Crosswalk configuration, which you might wanna consider in the future.
 
 #### `bower.json`
-You'll find my Bower hommies. Right now it's pretty minimal. I use Ionic and MomentJS and I install them under `www/lib/`. That's my vendor directory. It is specific in my resource file `.bowerrc`. Yep, that's that.
+You'll find my Bower hommies. Right now it's pretty minimal. I use Ionic and MomentJS and I install them under `www/lib/`. That's my vendor directory. It is specified in my resource file `.bowerrc`. Yep, that's that.
 
 
 
