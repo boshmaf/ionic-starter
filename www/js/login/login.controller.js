@@ -13,10 +13,10 @@
 
     function triggerAppError() {
       var errorData = {
-        message: 'This is the error message.',
-        cause: 'And this is why we are triggering it.'
+        message: 'This is the error message',
+        cause: 'And this is why we are triggering it'
       };
-      logger.error('This is an error message.', errorData, 'This is a title.');
+      logger.error('Login feature unavailable', errorData);
     }
   }
   Login.$inject = ['logger'];

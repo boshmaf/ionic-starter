@@ -18,22 +18,22 @@
 
     return service;
 
-    function error(message, data, title) {
+    function error(message, data) {
       toast(message);
       $log.error('Error: ' + message, data);
     }
 
-    function info(message, data, title) {
+    function info(message, data) {
       toast(message);
       $log.info('Info: ' + message, data);
     }
 
-    function success(message, data, title) {
+    function success(message, data) {
       toast(message);
       $log.info('Success: ' + message, data);
     }
 
-    function warning(message, data, title) {
+    function warning(message, data) {
       toast(message);
       $log.warn('Warning: ' + message, data);
     }
