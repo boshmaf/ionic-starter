@@ -5,6 +5,8 @@
     .module('blocks.exception')
     .factory('exception', exception);
 
+  exception.$inject = ['$log'];
+
   /* @ngInject */
   function exception($log) {
     var service = {
@@ -18,6 +20,5 @@
       };
     }
   }
-  exception.$inject = ['$log'];
 
 })();
