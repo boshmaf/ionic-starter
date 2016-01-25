@@ -9,7 +9,7 @@
     /**
      * Block modules
      */
-    'blocks.exception', 'blocks.logger'
+    'blocks.exception', 'blocks.logger', 'blocks.tracker'
   ]);
 
 })();
