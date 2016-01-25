@@ -5,10 +5,13 @@
     .module('blocks.logger')
     .factory('logger', logger);
 
+  logger.$inject = ['$log'];
+
   /* @ngInject */
   function logger($log) {
     var service = {
       showToasts: true,
+
       error: error,
       info: info,
       success: success,
@@ -44,6 +47,5 @@
       }
     }
   }
-  logger.$inject = ['$log'];
 
 }());
