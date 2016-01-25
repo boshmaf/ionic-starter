@@ -4,7 +4,17 @@
   var config = {
     appErrorPrefix: '[App Error]: ',
     appTitle: 'Bridge',
-    version: '1.0.0'
+    version: '1.0.0',
+
+    events: {
+      login: {
+        tapped: 'User tapped the screen'
+      }
+    },
+
+    views: {
+      login: 'Login'
+    }
   };
 
   angular
@@ -13,13 +23,14 @@
     .config(coreConfig);
 
   /* @ngInject */
-  function coreConfig($logProvider, exceptionHandlerProvider) {
+  function coreConfig($logProvider, exceptionHandlerProvider, trackerProvider) {
     if ($logProvider.debugEnabled) {
       $logProvider.debugEnabled(true);
     }
 
     exceptionHandlerProvider.configure(config.appErrorPrefix);
+    trackerProvider.configure(config.events, config.views);
   }
-  coreConfig.$inject = ['$logProvider', 'exceptionHandlerProvider'];
+  coreConfig.$inject = ['$logProvider', 'exceptionHandlerProvider', 'trackerProvider'];
 
 })();

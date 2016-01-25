@@ -5,6 +5,8 @@
     .module('app')
     .run(appRun);
 
+  appRun.$inject = ['$ionicPlatform'];
+
   /* @ngInject */
   function appRun($ionicPlatform) {
     $ionicPlatform.ready(function() {
@@ -16,6 +18,5 @@
       }
     });
   }
-  appRun.$inject = ['$ionicPlatform'];
 
 })();
