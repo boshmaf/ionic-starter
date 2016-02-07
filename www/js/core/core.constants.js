@@ -3,6 +3,7 @@
 
   angular
     .module('app.core')
-    .constant('moment', moment);
+    .constant('moment', moment)
+    .constant('_', _);
 
 })();

@@ -5,10 +5,10 @@
     .module('app.login')
     .controller('Login', Login);
 
-  Login.$inject = ['logger', 'tracker'];
+  Login.$inject = ['logger', 'tracker', '$translate'];
 
   /* @ngInject */
-  function Login(logger, tracker) {
+  function Login(logger, tracker, $translate) {
     var vm = this;
 
     vm.triggerTemplateFeatures = triggerTemplateFeatures;
@@ -24,6 +24,11 @@
       // track a view or an event
       tracker.trackView(tracker.views.login);
       tracker.trackEvent(tracker.events.login.tapped);
+
+      // translate some text
+      $translate('HELLO_WORLD').then(function (translation) {
+        logger.log(translation);
+      });
     }
   }
 
