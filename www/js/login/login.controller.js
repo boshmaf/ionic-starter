@@ -5,16 +5,16 @@
     .module('app.login')
     .controller('Login', Login);
 
-  Login.$inject = ['logger', 'tracker', '$translate'];
+  Login.$inject = ['logger', 'track', 'config', '$translate'];
 
   /* @ngInject */
-  function Login(logger, tracker, $translate) {
+  function Login(logger, track, config, $translate) {
     var vm = this;
 
     vm.triggerTemplateFeatures = triggerTemplateFeatures;
 
     function triggerTemplateFeatures() {
-      // log and error
+      // log an error
       var errorData = {
         message: 'This is an error message',
         cause: 'And this is why we triggered it'
@@ -22,10 +22,10 @@
       logger.error('Login feature unavailable', errorData);
 
       // track a view or an event
-      tracker.trackView(tracker.views.login);
-      tracker.trackEvent(tracker.events.login.tapped);
+      track.view(config.views.login);
+      track.event(config.events.login.tapped);
 
-      // translate some text
+      // translate a keyword
       $translate('HELLO_WORLD').then(function (translation) {
         logger.log(translation);
       });

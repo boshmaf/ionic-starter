@@ -9,7 +9,7 @@
 
   /* @ngInject */
   function logger($log) {
-    var service = {
+    var factory = {
       showToasts: true,
 
       error: error,
@@ -18,8 +18,7 @@
       warning: warning,
       log: $log.log
     };
-
-    return service;
+    return factory;
 
     function error(message, data) {
       toast(message);
@@ -42,7 +41,7 @@
     }
 
     function toast(message) {
-      if (service.showToasts) {
+      if (factory.showToasts) {
         window.plugins.toast.showShortBottom(message);
       }
     }

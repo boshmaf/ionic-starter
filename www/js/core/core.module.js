@@ -11,7 +11,7 @@
      */
     'blocks.exception',
     'blocks.logger',
-    'blocks.tracker',
+    'blocks.track',
     'blocks.translate'
   ]);
 

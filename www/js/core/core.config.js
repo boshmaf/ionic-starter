@@ -3,8 +3,8 @@
 
   var config = {
     appErrorPrefix: '[App Error]: ',
-    appTitle: 'Bridge',
-    version: '1.0.0',
+    appTitle: 'Mobile',
+    version: '0.0.1',
 
     events: {
       login: {
@@ -23,14 +23,14 @@
     .config(coreConfig);
 
   /* @ngInject */
-  function coreConfig($logProvider, exceptionHandlerProvider, trackerProvider) {
+  function coreConfig($logProvider, exceptionHandlerProvider, trackProvider) {
     if ($logProvider.debugEnabled) {
       $logProvider.debugEnabled(true);
     }
 
     exceptionHandlerProvider.configure(config.appErrorPrefix);
-    trackerProvider.configure(config.events, config.views);
+    trackProvider.configure();
   }
-  coreConfig.$inject = ['$logProvider', 'exceptionHandlerProvider', 'trackerProvider'];
+  coreConfig.$inject = ['$logProvider', 'exceptionHandlerProvider', 'trackProvider'];
 
 })();

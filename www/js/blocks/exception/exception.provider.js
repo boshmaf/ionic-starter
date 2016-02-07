@@ -6,18 +6,22 @@
     .provider('exceptionHandler', exceptionHandlerProvider);
 
   function exceptionHandlerProvider() {
-    /* jshint validthis:true */
-    this.config = {
-      appErrorPrefix: undefined
+    var provider = {
+      config : {
+        appErrorPrefix: undefined
+      },
+      configure: configure,
+      $get: getFactory
     };
+    return provider;
 
-    this.configure = function (appErrorPrefix) {
-      this.config.appErrorPrefix = appErrorPrefix;
-    };
+    function configure(appErrorPrefix) {
+      provider.config.appErrorPrefix = appErrorPrefix;
+    }
 
-    this.$get = function() {
-      return {config: this.config};
-    };
+    function getFactory() {
+      return {config: provider.config};
+    }
   }
 
 })();
