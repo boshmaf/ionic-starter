@@ -3,12 +3,12 @@
 
   angular
     .module('blocks.exception')
-    .config(exceptionConfig);
+    .config(exceptionConfigure);
 
-  exceptionConfig.$inject = ['$provide'];
+  exceptionConfigure.$inject = ['$provide'];
 
   /* @ngInject */
-  function exceptionConfig($provide) {
+  function exceptionConfigure($provide) {
     $provide.decorator('$exceptionHandler', extendExceptionHandler);
   }
 

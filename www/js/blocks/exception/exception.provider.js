@@ -20,7 +20,10 @@
     }
 
     function getFactory() {
-      return {config: provider.config};
+      var factory = {
+        config: provider.config
+      }
+      return factory;
     }
   }
 

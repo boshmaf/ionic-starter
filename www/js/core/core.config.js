@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  var config = {
+  var coreConfig = {
     appErrorPrefix: '[App Error]: ',
     appTitle: 'Mobile',
     version: '0.0.1',
@@ -19,18 +19,18 @@
 
   angular
     .module('app.core')
-    .value('config', config)
-    .config(coreConfig);
+    .value('coreConfig', coreConfig)
+    .config(coreConfigure);
 
   /* @ngInject */
-  function coreConfig($logProvider, exceptionHandlerProvider, trackProvider) {
+  function coreConfigure($logProvider, exceptionHandlerProvider, trackProvider) {
     if ($logProvider.debugEnabled) {
       $logProvider.debugEnabled(true);
     }
 
-    exceptionHandlerProvider.configure(config.appErrorPrefix);
+    exceptionHandlerProvider.configure(coreConfig.appErrorPrefix);
     trackProvider.configure();
   }
-  coreConfig.$inject = ['$logProvider', 'exceptionHandlerProvider', 'trackProvider'];
+  coreConfigure.$inject = ['$logProvider', 'exceptionHandlerProvider', 'trackProvider'];
 
 })();

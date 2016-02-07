@@ -3,12 +3,12 @@
 
   angular
     .module('app.login')
-    .config(loginConfig);
+    .config(loginConfigure);
 
-  loginConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
+  loginConfigure.$inject = ['$stateProvider', '$urlRouterProvider'];
 
   /* @ngInject */
-  function loginConfig($stateProvider, $urlRouterProvider) {
+  function loginConfigure($stateProvider, $urlRouterProvider) {
     $stateProvider.state('login', {
       url: '/',
       templateUrl: 'js/login/login.template.html',

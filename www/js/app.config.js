@@ -3,12 +3,12 @@
 
   angular
     .module('app')
-    .config(appConfig);
+    .config(appConfigure);
 
-  appConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
+  appConfigure.$inject = ['$stateProvider', '$urlRouterProvider'];
 
   /* @ngInject */
-  function appConfig($stateProvider, $urlRouterProvider) {
+  function appConfigure($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
   }
 

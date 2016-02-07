@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  var config = {
+  var translateConfig = {
     staticFiles: {
       prefix: 'js/blocks/translate/locales/',
       suffix: '.json'
@@ -22,13 +22,13 @@
   };
 
   function getLanguages() {
-    return Object.keys(config.languages);
+    return Object.keys(translateConfig.languages);
   }
 
   function getLanguagesAliases() {
     var aliases = {}, tags = getLanguages();
     _.forEach(tags, function (tag) {
-      _.forEach(config.languages[tag].aliases, function (alias) {
+      _.forEach(translateConfig.languages[tag].aliases, function (alias) {
         aliases.alias = tag;
       });
     });
@@ -37,31 +37,30 @@
 
   angular
     .module('blocks.translate')
-    .config(translateConfig);
+    .value('translateConfig', translateConfig)
+    .config(translateConfigure);
 
-  translateConfig.$inject = ['$provide', '$translateProvider'];
+  translateConfigure.$inject = ['$provide', '$translateProvider'];
 
   /* @ngInject */
-  function translateConfig($provide, $translateProvider) {
+  function translateConfigure($provide, $translateProvider) {
 
     $provide.decorator('$translate', extendedTranslate);
 
     $translateProvider
-      .useStaticFilesLoader(config.staticFiles)
+      .useStaticFilesLoader(translateConfig.staticFiles)
       .registerAvailableLanguageKeys(getLanguages(), getLanguagesAliases())
-      .preferredLanguage(config.preferredLanguage)
-      .fallbackLanguage(config.fallbackLanguage)
+      .preferredLanguage(translateConfig.preferredLanguage)
+      .fallbackLanguage(translateConfig.fallbackLanguage)
       .determinePreferredLanguage()
-      .useSanitizeValueStrategy(config.sanitizationStrategy);
+      .useSanitizeValueStrategy(translateConfig.sanitizationStrategy);
   }
 
   /* @ngInject */
-  function extendedTranslate($delegate, logger) {
-    $delegate.customTranslateFunction = function () {
-      logger.log('Inside $translate.customTranslateFunction()');
-    };
-    return $delegate;
+  function extendedTranslate($delegate) {
+    var translateService = $delegate;
+    return translateService;
   }
-  extendedTranslate.$inject = ['$delegate', 'logger'];
+  extendedTranslate.$inject = ['$delegate'];
 
 })();
