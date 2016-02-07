@@ -14,7 +14,10 @@
 
     "vendor": {
       "js": [
-        "./www/lib/ionic/js/ionic.bundle.min.js",
+        "./www/lib/ionic/js/ionic.bundle.js",
+        "./www/lib/angular-translate/angular-translate.min.js",
+        "./www/lib/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js",
+        "./www/lib/lodash/dist/lodash.min.js",
         "./www/lib/moment/min/moment.min.js",
         "./www/cordova.js"
       ],

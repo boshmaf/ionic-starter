@@ -14,7 +14,7 @@ var inject = require('gulp-inject');
 /**
  * Runs the following gulp tasks by default
  */
-gulp.task('default', ['scsslint', 'sass', 'jslint', 'ng-annotate']);
+gulp.task('default', ['scsslint', 'sass', 'jslint', 'ng-annotate', 'index']);
 
 /**
  * Lints Sass files
