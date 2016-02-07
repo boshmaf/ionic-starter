@@ -4,6 +4,6 @@
   angular
     .module('app.core')
     .constant('moment', moment)
-    .constant('_', _);
+    .constant('_', window._);
 
 })();
