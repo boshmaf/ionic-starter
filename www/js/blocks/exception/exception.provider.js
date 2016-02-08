@@ -22,7 +22,7 @@
     function getFactory() {
       var factory = {
         config: provider.config
-      }
+      };
       return factory;
     }
   }
