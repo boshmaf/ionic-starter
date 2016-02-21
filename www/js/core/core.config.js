@@ -4,11 +4,8 @@
   var coreConfig = {
     appErrorPrefix: '[App Error]: ',
     appTitle: 'Mobile',
+    appFirebaseId: 'luminous-torch-9140',
     version: '0.0.1',
-
-    firebase: {
-      appId: 'luminous-torch-9140'
-    },
 
     events: {
       login: {
@@ -43,8 +40,13 @@
 
     exceptionHandlerProvider.configure(coreConfig.appErrorPrefix);
     trackProvider.configure();
-    firebaseHandlerProvider.configure(coreConfig.firebase.appId);
+    firebaseHandlerProvider.configure(coreConfig.appFirebaseId);
   }
-  coreConfigure.$inject = ['$logProvider', 'exceptionHandlerProvider', 'trackProvider', 'firebaseHandlerProvider'];
+  coreConfigure.$inject = [
+    '$logProvider',
+    'exceptionHandlerProvider',
+    'trackProvider',
+    'firebaseHandlerProvider'
+  ];
 
 })();

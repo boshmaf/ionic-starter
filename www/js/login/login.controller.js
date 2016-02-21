@@ -22,7 +22,7 @@
     $scope.$on('$ionicView.enter', onViewEnterHandler);
 
     function isLoggedIn() {
-      return firebaseAuth.isAuth();
+      return firebaseAuth.isAuth;
     }
 
     function loginWithGithub() {

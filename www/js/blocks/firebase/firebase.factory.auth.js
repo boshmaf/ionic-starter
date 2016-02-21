@@ -10,12 +10,10 @@
   /* @ngInject */
   function firebaseAuth($firebaseAuth, firebaseHandler, logger) {
     var rootRef = firebaseHandler.getRootRef();
-    var authRef = $firebaseAuth(rootRef);
-    var authSuccess = false;
 
     var factory = {
-      isAuth: isAuth,
-      getAuthRef: getAuthRef,
+      isAuth: false,
+      authRef: $firebaseAuth(rootRef),
       authWithOAuthPopup: authWithOAuthPopup,
       unAuth: unAuth,
     };
@@ -23,43 +21,36 @@
     rootRef.onAuth(authDataCallback);
     return factory;
 
-    function isAuth() {
-      return authSuccess;
-    }
-
-    function getAuthRef() {
-      return authRef;
-    }
-
     function authWithOAuthPopup(provider) {
-      if (isAuth()) {
+      if (factory.isAuth) {
         return;
       }
 
-      authRef
+      factory
+        .authRef
         .$authWithOAuthPopup(provider)
         .then(successCallback, errorCallback);
 
       function successCallback() {
-        authSuccess = true;
+        factory.isAuth = true;
       }
 
       function errorCallback(errorData) {
-        authSuccess = false;
-        logger.error('Could not login to ' + provider, errorData);
+        factory.isAuth = false;
+        logger.error('Could not auth to ' + provider, errorData);
       }
     }
 
     function unAuth() {
-      if (isAuth()) {
-        authRef.$unauth();
-        authSuccess = false;
+      if (factory.isAuth) {
+        factory.authRef.$unauth();
+        factory.isAuth = false;
       }
     }
 
     function authDataCallback(authData) {
       if (authData !== null) {
-        authSuccess = true;
+        factory.isAuth = true;
         rootRef
           .child('users')
           .child(authData.uid)
@@ -68,7 +59,7 @@
             displayName: getDisplayName(authData)
           });
       } else {
-        authSuccess = false;
+        factory.isAuth = false;
       }
 
       function getDisplayName(authData) {
