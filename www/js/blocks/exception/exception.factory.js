@@ -9,10 +9,10 @@
 
   /* @ngInject */
   function exception($log) {
-    var service = {
+    var factory = {
       catcher: catcher
     };
-    return service;
+    return factory;
 
     function catcher(message) {
       return function(reason) {

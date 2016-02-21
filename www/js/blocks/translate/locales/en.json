@@ -1,4 +1,5 @@
 {
-  "HELLO_WORLD": "Hello World!",
-  "CLICK_TO_LOGIN": "Click here to login."
+  "HELLO": "Hello",
+  "LOGIN_GITHUB": "Login with Github",
+  "LOGOUT": "Logout"
 }

@@ -15,6 +15,8 @@
     "vendor": {
       "js": [
         "./www/lib/ionic/js/ionic.bundle.js",
+        "./www/lib/firebase/firebase.js",
+        "./www/lib/angularfire/dist/angularfire.min.js",
         "./www/lib/angular-translate/angular-translate.min.js",
         "./www/lib/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js",
         "./www/lib/lodash/dist/lodash.min.js",

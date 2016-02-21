@@ -6,14 +6,22 @@
     appTitle: 'Mobile',
     version: '0.0.1',
 
+    firebase: {
+      appId: 'luminous-torch-9140'
+    },
+
     events: {
       login: {
-        tapped: 'User tapped the screen'
+        tapped: 'User tapped login button'
+      },
+      logout: {
+        tapped: 'User tapped logout button'
       }
     },
 
     views: {
-      login: 'Login'
+      login: 'Login',
+      logout: 'Logout'
     }
   };
 
@@ -23,14 +31,20 @@
     .config(coreConfigure);
 
   /* @ngInject */
-  function coreConfigure($logProvider, exceptionHandlerProvider, trackProvider) {
+  function coreConfigure(
+    $logProvider,
+    exceptionHandlerProvider,
+    trackProvider,
+    firebaseHandlerProvider) {
+
     if ($logProvider.debugEnabled) {
       $logProvider.debugEnabled(true);
     }
 
     exceptionHandlerProvider.configure(coreConfig.appErrorPrefix);
     trackProvider.configure();
+    firebaseHandlerProvider.configure(coreConfig.firebase.appId);
   }
-  coreConfigure.$inject = ['$logProvider', 'exceptionHandlerProvider', 'trackProvider'];
+  coreConfigure.$inject = ['$logProvider', 'exceptionHandlerProvider', 'trackProvider', 'firebaseHandlerProvider'];
 
 })();

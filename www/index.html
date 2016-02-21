@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src *">
     <title></title>
 
     <!-- inject-vendor:css -->
@@ -17,6 +17,8 @@
 
     <!-- inject-vendor:js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/firebase/firebase.js"></script>
+    <script src="lib/angularfire/dist/angularfire.min.js"></script>
     <script src="lib/angular-translate/angular-translate.min.js"></script>
     <script src="lib/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
     <script src="lib/lodash/dist/lodash.min.js"></script>
@@ -26,22 +28,26 @@
 
     <!-- inject:js -->
     <script src="js/app.module.js"></script>
-    <script src="js/login/login.module.js"></script>
     <script src="js/core/core.module.js"></script>
+    <script src="js/login/login.module.js"></script>
     <script src="js/blocks/exception/exception.module.js"></script>
+    <script src="js/blocks/firebase/firebase.module.js"></script>
     <script src="js/blocks/logger/logger.module.js"></script>
     <script src="js/blocks/track/track.module.js"></script>
     <script src="js/blocks/translate/translate.module.js"></script>
     <script src="js/app.config.js"></script>
     <script src="js/app.run.js"></script>
-    <script src="js/login/login.config.js"></script>
-    <script src="js/login/login.controller.js"></script>
     <script src="js/core/core.config.js"></script>
     <script src="js/core/core.constants.js"></script>
     <script src="js/core/core.run.js"></script>
+    <script src="js/login/login.config.js"></script>
+    <script src="js/login/login.controller.js"></script>
     <script src="js/blocks/exception/exception.config.js"></script>
     <script src="js/blocks/exception/exception.factory.js"></script>
     <script src="js/blocks/exception/exception.provider.js"></script>
+    <script src="js/blocks/firebase/firebase.factory.auth.js"></script>
+    <script src="js/blocks/firebase/firebase.factory.object.js"></script>
+    <script src="js/blocks/firebase/firebase.provider.js"></script>
     <script src="js/blocks/logger/logger.factory.js"></script>
     <script src="js/blocks/track/track.provider.js"></script>
     <script src="js/blocks/translate/translate.config.js"></script>

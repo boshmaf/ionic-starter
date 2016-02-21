@@ -10,6 +10,7 @@
      * Block modules
      */
     'blocks.exception',
+    'blocks.firebase',
     'blocks.logger',
     'blocks.track',
     'blocks.translate'

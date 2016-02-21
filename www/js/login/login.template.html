@@ -1,8 +1,17 @@
 <ion-view class="login-view">
   <ion-content>
-    <div class="-welcome"
-      ng-click="vm.triggerTemplateFeatures()"
-      translate="CLICK_TO_LOGIN">
+    <div class="padding -welcome">
+      <button class="button button-block button-positive"
+        ng-click="vm.loginWithGithub()"
+        ng-if="!vm.isLoggedIn()"
+        translate="LOGIN_GITHUB">
+      </button>
+      <button class="button button-block button-assertive"
+        ng-click="vm.logout()"
+        ng-if="vm.isLoggedIn()"
+        translate="LOGOUT">
+      </button>
+      <p>Has authenticated? {{ vm.isLoggedIn() }}</p>
     </div>
   </ion-content>
 </ion-view>
