@@ -5,10 +5,10 @@
     .module('blocks.firebase')
     .factory('firebaseAuth', firebaseAuth);
 
-  firebaseAuth.$inject = ['$firebaseAuth', 'firebaseHandler'];
+  firebaseAuth.$inject = ['$firebaseAuth', 'firebaseHandler', 'logger'];
 
   /* @ngInject */
-  function firebaseAuth($firebaseAuth, firebaseHandler) {
+  function firebaseAuth($firebaseAuth, firebaseHandler, logger) {
     var rootRef = firebaseHandler.getRootRef();
     var authRef = $firebaseAuth(rootRef);
     var authSuccess = false;
