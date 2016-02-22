@@ -28,10 +28,12 @@
     }
 
     function loginWithGithub() {
+      track.event(coreConfig.events.click.button.login);
       firebaseAuth.authWithOAuthPopup('github');
     }
 
     function logout() {
+      track.event(coreConfig.events.click.button.logout);
       firebaseAuth.unAuth();
     }
 

@@ -8,11 +8,11 @@
     version: '0.0.1',
 
     events: {
-      login: {
-        tapped: 'User tapped login button'
-      },
-      logout: {
-        tapped: 'User tapped logout button'
+      click: {
+        button: {
+          login: 'User clicked login button',
+          logout: 'User clicked logout button'
+        }
       }
     },
 
@@ -31,7 +31,6 @@
   function coreConfigure(
     $logProvider,
     exceptionHandlerProvider,
-    trackProvider,
     firebaseHandlerProvider) {
 
     if ($logProvider.debugEnabled) {
@@ -39,9 +38,8 @@
     }
 
     exceptionHandlerProvider.configure(coreConfig.appErrorPrefix);
-    trackProvider.configure();
     firebaseHandlerProvider.configure(coreConfig.appFirebaseId);
   }
-  coreConfigure.$inject = ['$logProvider', 'exceptionHandlerProvider', 'trackProvider', 'firebaseHandlerProvider'];
+  coreConfigure.$inject = ['$logProvider', 'exceptionHandlerProvider', 'firebaseHandlerProvider'];
 
 })();

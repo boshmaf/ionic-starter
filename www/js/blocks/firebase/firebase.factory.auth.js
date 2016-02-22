@@ -5,10 +5,15 @@
     .module('blocks.firebase')
     .factory('firebaseAuth', firebaseAuth);
 
-  firebaseAuth.$inject = ['$firebaseAuth', 'firebaseHandler', 'logger'];
+  firebaseAuth.$inject = ['$firebaseAuth', 'firebaseHandler', 'logger', 'track', 'firebaseDataStore'];
 
   /* @ngInject */
-  function firebaseAuth($firebaseAuth, firebaseHandler, logger) {
+  function firebaseAuth(
+    $firebaseAuth,
+    firebaseHandler,
+    logger, track,
+    firebaseDataStore) {
+
     var rootRef = firebaseHandler.getRootRef();
 
     var factory = {
@@ -47,12 +52,15 @@
       if (factory.isAuth) {
         factory.authRef.$unauth();
         factory.isAuth = false;
+        track.setDataStore();
       }
     }
 
     function authDataCallback(authData) {
       if (authData !== null) {
         factory.authData = authData;
+        firebaseDataStore.setUserId(factory.authData.uid);
+        track.setDataStore(firebaseDataStore);
         factory.isAuth = true;
         rootRef
           .child('users')
