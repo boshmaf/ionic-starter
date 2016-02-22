@@ -2,7 +2,14 @@
   background-color: $white;
   margin-top: 20px;
 
-  .-welcome {
-    font-size: 18px;
+  .-content {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    .-welcome {
+      font-size: 18px;
+    }
   }
 }

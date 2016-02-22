@@ -9734,5 +9734,10 @@ a.button {
 .login-view {
   background-color: #fff;
   margin-top: 20px; }
-  .login-view .-welcome {
-    font-size: 18px; }
+  .login-view .-content {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: center; }
+    .login-view .-content .-welcome {
+      font-size: 18px; }

@@ -42,11 +42,6 @@
     trackProvider.configure();
     firebaseHandlerProvider.configure(coreConfig.appFirebaseId);
   }
-  coreConfigure.$inject = [
-    '$logProvider',
-    'exceptionHandlerProvider',
-    'trackProvider',
-    'firebaseHandlerProvider'
-  ];
+  coreConfigure.$inject = ['$logProvider', 'exceptionHandlerProvider', 'trackProvider', 'firebaseHandlerProvider'];
 
 })();
