@@ -13,9 +13,11 @@
 
     var factory = {
       isAuth: false,
+      authData: null,
       authRef: $firebaseAuth(rootRef),
       authWithOAuthPopup: authWithOAuthPopup,
       unAuth: unAuth,
+      getDisplayName: getDisplayName
     };
 
     rootRef.onAuth(authDataCallback);
@@ -50,6 +52,7 @@
 
     function authDataCallback(authData) {
       if (authData !== null) {
+        factory.authData = authData;
         factory.isAuth = true;
         rootRef
           .child('users')
@@ -61,18 +64,24 @@
       } else {
         factory.isAuth = false;
       }
+    }
 
-      function getDisplayName(authData) {
-        switch(authData.provider) {
-          case 'password':
-            return authData.password.email.replace(/@.*/, '');
-          case 'twitter':
-            return authData.twitter.displayName;
-          case 'facebook':
-            return authData.facebook.displayName;
-          case 'github':
-            return authData.github.displayName;
-        }
+    function getDisplayName(authData) {
+      if (!factory.isAuth) {
+        return null;
+      }
+      if (authData === undefined) {
+        authData = factory.authData;
+      }
+      switch(authData.provider) {
+        case 'password':
+          return authData.password.email.replace(/@.*/, '');
+        case 'twitter':
+          return authData.twitter.displayName;
+        case 'facebook':
+          return authData.facebook.displayName;
+        case 'github':
+          return authData.github.displayName;
       }
     }
   }

@@ -1,6 +1,9 @@
 <ion-view class="login-view">
   <ion-content>
     <div class="padding -welcome">
+      <div ng-if="vm.isLoggedIn()">
+        <p> {{ 'HELLO' | translate }}, {{ vm.displayName }}!</p>
+      </div>
       <button class="button button-block button-positive"
         ng-click="vm.loginWithGithub()"
         ng-if="!vm.isLoggedIn()"
@@ -11,7 +14,6 @@
         ng-if="vm.isLoggedIn()"
         translate="LOGOUT">
       </button>
-      <p>Has authenticated? {{ vm.isLoggedIn() }}</p>
     </div>
   </ion-content>
 </ion-view>

@@ -15,6 +15,8 @@
 
     var vm = this;
 
+    vm.displayName = firebaseAuth.getDisplayName();
+
     vm.isLoggedIn = isLoggedIn;
     vm.loginWithGithub = loginWithGithub;
     vm.logout = logout;
