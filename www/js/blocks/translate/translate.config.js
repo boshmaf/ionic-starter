@@ -40,8 +40,6 @@
     .value('translateConfig', translateConfig)
     .config(translateConfigure);
 
-  translateConfigure.$inject = ['$provide', '$translateProvider'];
-
   /* @ngInject */
   function translateConfigure($provide, $translateProvider) {
 
@@ -56,11 +54,14 @@
       .useSanitizeValueStrategy(translateConfig.sanitizationStrategy);
   }
 
+  translateConfigure.$inject = ['$provide', '$translateProvider'];
+
   /* @ngInject */
   function extendedTranslate($delegate) {
     var translateService = $delegate;
     return translateService;
   }
+
   extendedTranslate.$inject = ['$delegate'];
 
 })();

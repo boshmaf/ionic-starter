@@ -5,8 +5,6 @@
     .module('app.login')
     .config(loginConfigure);
 
-  loginConfigure.$inject = ['$stateProvider', '$urlRouterProvider'];
-
   /* @ngInject */
   function loginConfigure($stateProvider, $urlRouterProvider) {
     $stateProvider.state('login', {
@@ -16,5 +14,7 @@
       controllerAs: 'vm',
     });
   }
+
+  loginConfigure.$inject = ['$stateProvider', '$urlRouterProvider'];
 
 })();

@@ -5,8 +5,6 @@
     .module('blocks.logger')
     .factory('logger', logger);
 
-  logger.$inject = ['$log'];
-
   /* @ngInject */
   function logger($log) {
     var factory = {
@@ -46,5 +44,7 @@
       }
     }
   }
+
+  logger.$inject = ['$log'];
 
 }());

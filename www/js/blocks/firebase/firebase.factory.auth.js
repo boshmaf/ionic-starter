@@ -5,8 +5,6 @@
     .module('blocks.firebase')
     .factory('firebaseAuth', firebaseAuth);
 
-  firebaseAuth.$inject = ['$firebaseAuth', 'firebaseHandler', 'logger', 'track', 'firebaseDataStore'];
-
   /* @ngInject */
   function firebaseAuth(
     $firebaseAuth,
@@ -78,7 +76,7 @@
       if (!factory.isAuth) {
         return null;
       }
-      if (authData === undefined) {
+      if (!authData) {
         authData = factory.authData;
       }
       switch(authData.provider) {
@@ -93,5 +91,7 @@
       }
     }
   }
+
+  firebaseAuth.$inject = ['$firebaseAuth', 'firebaseHandler', 'logger', 'track', 'firebaseDataStore'];
 
 })();

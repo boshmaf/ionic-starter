@@ -40,6 +40,7 @@
     exceptionHandlerProvider.configure(coreConfig.appErrorPrefix);
     firebaseHandlerProvider.configure(coreConfig.appFirebaseId);
   }
+
   coreConfigure.$inject = ['$logProvider', 'exceptionHandlerProvider', 'firebaseHandlerProvider'];
 
 })();
